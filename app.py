@@ -30,6 +30,7 @@ jwt = JWTManager(app)
 # Registra o Blueprint das rotas, atribuindo um prefixo
 app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(agendamentos_bp, url_prefix='/api/agendamentos')
+app.register_blueprint(servicos_bp, url_prefix='/api/servicos')
 
 
 # Permite o servidor rodar sem parar

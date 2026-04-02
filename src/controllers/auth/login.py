@@ -20,7 +20,11 @@ def login():
         if not senha_valida:
             return jsonify({"mensagem": "Senha incorreta"}), 401
 
-        token = create_access_token(identity=str(resultado.id))
+        token = create_access_token(
+            identity=str(resultado.id), 
+            additional_claims={"empresa_id": str(resultado.empresa_id),
+            "role": resultado.role.value
+            })
 
         return jsonify({
             "mensagem": "Usuario logado com sucesso",
