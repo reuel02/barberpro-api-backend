@@ -4,4 +4,5 @@ from src.models.servico import Servico
 class ServicoSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Servico
-        load_instance = True 
+        load_instance = False
+        dump_only = ("id", "empresa_id", "ativo")
