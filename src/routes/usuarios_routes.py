@@ -1,3 +1,4 @@
+from src.controllers.usuarios.listar_barbeiros_publica import listar_barbeiros_publica
 from src.controllers.usuarios.listar_usuarios_por_role import listar_usuarios_por_role
 from src.controllers.usuarios.cadastrar_funcionario import cadastrar_funcionario
 from src.controllers.usuarios.cadastrar_cliente import cadastrar_cliente
@@ -16,3 +17,5 @@ usuarios_bp.route("/cadastrar/funcionario", methods=["POST"])(cadastrar_funciona
 
 # Rota de listagem de usuarios
 usuarios_bp.route("/listar/<role>", methods=["GET"])(listar_usuarios_por_role)
+
+usuarios_bp.route("/listar/barbeiros/<empresa_id>", methods=["GET"])(listar_barbeiros_publica)

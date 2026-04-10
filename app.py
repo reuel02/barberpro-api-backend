@@ -8,9 +8,13 @@ from src.routes.usuarios_routes import usuarios_bp
 import src.models
 from flask_jwt_extended import JWTManager
 import os
+from flask_cors import CORS
 
 # Instancia do Flask
 app = Flask(__name__)
+
+# Permitindo a comunicacao do front-end com a API
+CORS(app)
 
 # Configurações do banco de dados
 app.config["SQLALCHEMY_DATABASE_URI"] = (
